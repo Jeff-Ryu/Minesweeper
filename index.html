@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<!-- CSS / JS -->
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+		<script src="js/script.js"></script>
+		<!-- Font -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+		<title>Minesweeper</title>
+	</head>
+	<body class="chakra-petch-semibold">
+		<main>
+			<div class="container-fluid">
+				<div id="menu-bar" class="consolas">
+                    <div id="bomb-display">010</div>
+                    <div id="face" onclick="reset()">&#128512;</div>
+                    <div id="time-display">000</div>
+                </div>
+                <div id="board">
+                    <div class="row">
+                        <div class="tile covered" data-index="0" data-x="0" data-y="0"></div>
+                        <div class="tile covered" data-index="1" data-x="1" data-y="0"></div>
+                        <div class="tile covered" data-index="2" data-x="2" data-y="0"></div>
+                        <div class="tile covered" data-index="3" data-x="3" data-y="0"></div>
+                        <div class="tile covered" data-index="4" data-x="4" data-y="0"></div>
+                        <div class="tile covered" data-index="5" data-x="5" data-y="0"></div>
+                        <div class="tile covered" data-index="6" data-x="6" data-y="0"></div>
+                        <div class="tile covered" data-index="7" data-x="7" data-y="0"></div>
+                        <div class="tile covered" data-index="8" data-x="8" data-y="0"></div>
+                    </div>
+                    <div class="row">
+                        <div class="tile covered" data-index="9" data-x="0" data-y="1"></div>
+                        <div class="tile covered" data-index="10" data-x="1" data-y="1"></div>
+                        <div class="tile covered" data-index="11" data-x="2" data-y="1"></div>
+                        <div class="tile covered" data-index="12" data-x="3" data-y="1"></div>
+                        <div class="tile covered" data-index="13" data-x="4" data-y="1"></div>
+                        <div class="tile covered" data-index="14" data-x="5" data-y="1"></div>
+                        <div class="tile covered" data-index="15" data-x="6" data-y="1"></div>
+                        <div class="tile covered" data-index="16" data-x="7" data-y="1"></div>
+                        <div class="tile covered" data-index="17" data-x="8" data-y="1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="tile covered" data-index="18" data-x="0" data-y="2"></div>
+                        <div class="tile covered" data-index="19" data-x="1" data-y="2"></div>
+                        <div class="tile covered" data-index="20" data-x="2" data-y="2"></div>
+                        <div class="tile covered" data-index="21" data-x="3" data-y="2"></div>
+                        <div class="tile covered" data-index="22" data-x="4" data-y="2"></div>
+                        <div class="tile covered" data-index="23" data-x="5" data-y="2"></div>
+                        <div class="tile covered" data-index="24" data-x="6" data-y="2"></div>
+                        <div class="tile covered" data-index="25" data-x="7" data-y="2"></div>
+                        <div class="tile covered" data-index="26" data-x="8" data-y="2"></div>
+                    </div>
+                    <div class="row">
+                        <div class="tile covered" data-index="27" data-x="0" data-y="3"></div>
+                        <div class="tile covered" data-index="28" data-x="1" data-y="3"></div>
+                        <div class="tile covered" data-index="29" data-x="2" data-y="3"></div>
+                        <div class="tile covered" data-index="30" data-x="3" data-y="3"></div>
+                        <div class="tile covered" data-index="31" data-x="4" data-y="3"></div>
+                        <div class="tile covered" data-index="32" data-x="5" data-y="3"></div>
+                        <div class="tile covered" data-index="33" data-x="6" data-y="3"></div>
+                        <div class="tile covered" data-index="34" data-x="7" data-y="3"></div>
+                        <div class="tile covered" data-index="35" data-x="8" data-y="3"></div>
+                    </div>
+                    <div class="row">
+                        <div class="tile covered" data-index="36" data-x="0" data-y="4"></div>
+                        <div class="tile covered" data-index="37" data-x="1" data-y="4"></div>
+                        <div class="tile covered" data-index="38" data-x="2" data-y="4"></div>
+                        <div class="tile covered" data-index="39" data-x="3" data-y="4"></div>
+                        <div class="tile covered" data-index="40" data-x="4" data-y="4"></div>
+                        <div class="tile covered" data-index="41" data-x="5" data-y="4"></div>
+                        <div class="tile covered" data-index="42" data-x="6" data-y="4"></div>
+                        <div class="tile covered" data-index="43" data-x="7" data-y="4"></div>
+                        <div class="tile covered" data-index="44" data-x="8" data-y="4"></div>
+                    </div>
+                    <div class="row">
+                        <div class="tile covered" data-index="45" data-x="0" data-y="5"></div>
+                        <div class="tile covered" data-index="46" data-x="1" data-y="5"></div>
+                        <div class="tile covered" data-index="47" data-x="2" data-y="5"></div>
+                        <div class="tile covered" data-index="48" data-x="3" data-y="5"></div>
+                        <div class="tile covered" data-index="49" data-x="4" data-y="5"></div>
+                        <div class="tile covered" data-index="50" data-x="5" data-y="5"></div>
+                        <div class="tile covered" data-index="51" data-x="6" data-y="5"></div>
+                        <div class="tile covered" data-index="52" data-x="7" data-y="5"></div>
+                        <div class="tile covered" data-index="53" data-x="8" data-y="5"></div>
+                    </div>
+                    <div class="row">
+                        <div class="tile covered" data-index="54" data-x="0" data-y="6"></div>
+                        <div class="tile covered" data-index="55" data-x="1" data-y="6"></div>
+                        <div class="tile covered" data-index="56" data-x="2" data-y="6"></div>
+                        <div class="tile covered" data-index="57" data-x="3" data-y="6"></div>
+                        <div class="tile covered" data-index="58" data-x="4" data-y="6"></div>
+                        <div class="tile covered" data-index="59" data-x="5" data-y="6"></div>
+                        <div class="tile covered" data-index="60" data-x="6" data-y="6"></div>
+                        <div class="tile covered" data-index="61" data-x="7" data-y="6"></div>
+                        <div class="tile covered" data-index="62" data-x="8" data-y="6"></div>
+                    </div>
+                    <div class="row">
+                        <div class="tile covered" data-index="63" data-x="0" data-y="7"></div>
+                        <div class="tile covered" data-index="64" data-x="1" data-y="7"></div>
+                        <div class="tile covered" data-index="65" data-x="2" data-y="7"></div>
+                        <div class="tile covered" data-index="66" data-x="3" data-y="7"></div>
+                        <div class="tile covered" data-index="67" data-x="4" data-y="7"></div>
+                        <div class="tile covered" data-index="68" data-x="5" data-y="7"></div>
+                        <div class="tile covered" data-index="69" data-x="6" data-y="7"></div>
+                        <div class="tile covered" data-index="70" data-x="7" data-y="7"></div>
+                        <div class="tile covered" data-index="71" data-x="8" data-y="7"></div>
+                    </div>
+                    <div class="row">
+                        <div class="tile covered" data-index="72" data-x="0" data-y="8"></div>
+                        <div class="tile covered" data-index="73" data-x="1" data-y="8"></div>
+                        <div class="tile covered" data-index="74" data-x="2" data-y="8"></div>
+                        <div class="tile covered" data-index="75" data-x="3" data-y="8"></div>
+                        <div class="tile covered" data-index="76" data-x="4" data-y="8"></div>
+                        <div class="tile covered" data-index="77" data-x="5" data-y="8"></div>
+                        <div class="tile covered" data-index="78" data-x="6" data-y="8"></div>
+                        <div class="tile covered" data-index="79" data-x="7" data-y="8"></div>
+                        <div class="tile covered" data-index="80" data-x="8" data-y="8"></div>
+                    </div>
+                </div>
+			</div>
+		</main>
+	</body>
+</html>
+<!-- Web Page Created By: Jeff.R -->
